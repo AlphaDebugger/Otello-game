@@ -1,15 +1,28 @@
 # Otello
-The first objective of this exercise, to be developed in two sessions, is to understand and implement the α − β algorithm for resolution of game trees. The algorithm should be implemented as generally as possible, but it will be tested applying it to the game of Otello. In addition you must devise several game heuristics and make them compete against each other, either between those made by the components of the same group or against those made by other groups.
-The rules of Otello are: we have a square board made by 64 squares (8 rows and 8 columns). 64 tokens exist with the shape of a coin and with different colors or symbols on each side (as in real coins). In our case, let’s say one face white and the other black.
-Each player is associated with a color (face) of the tokens. Starting with the player who plays with black, each player places a token in any of the free squares with a restriction: when doing so, at least one token of the opponent’s color should be reversed. A token must be reverted if it is aligned horizontally, vertically, or diagonally between two of the opposite color, and also the whole line between them is continuously occupied (without holes) by tokens of the same color. This means e.g. that from the starting position, the first move of black could only be either to E3 (then, flipping the white token at E4), to C5 (flipping D5), to F4 (flipping E4) or to D6 (flipping D5).
-If a player cannot place any token of his color according to these rules, he must pass, and only in that case is he allowed to do so. The game ends when all the 64 tokens are on the board, or when none of the two players can put more tokens. The winner is the player whose color is displayed at that time in more tokens on the board, or the two players tie in case of equality in number of tokens.
-The result you must submit is:
-The implementation of the α − β algorithm and its test in the game.
-The implementation of at least two heuristics and their test in the game playing one against the other.
-A file explanation.txt in ASCII text with the compilation instructions and results obtained with each heuristic.
-The source code SUFFICIENTLY COMMENTED will have to be submitted, too.
-Some data type are defined and a class Board is provided to help with the implementation. The data types are:
-Type Square: typedef pair<char,char>Square. It is a pair of two characters that represents a square of the board. To be valid, the first character must be ’1’,...,’8’ (the row), and the second, ’A’,...,’H’ (the column). Notice that digits are represented as characters, not as integers.
-Type Sqlist: typedef list<Square>Sqlist. A list of squares.
-Type Token: defined as an enumerated type enum Token {x,o,e }. Letter o represents a black square,
-x represents a white one and the e an empty square.
+##Project Overview
+
+This project is focused on implementing the α-β pruning algorithm for game tree resolution, specifically applied to the game of Otello (also known as Reversi). The objective is to understand and implement the algorithm, devise game heuristics, and compare their performance against each other.
+
+##Game Rules
+
+Otello is played on an 8x8 board with two players, Alice and Bob, who use black and white tokens, respectively. The game starts with four tokens placed in the center of the board. Players take turns placing tokens, with the requirement that each token placed must flip at least one of the opponent's tokens. The game ends when the board is full or neither player can make a legal move. The winner is determined by who has the most tokens on the board at the end of the game.
+
+##Files Included
+
+pr2_eng.pdf: Detailed description of the project requirements, including game rules, algorithm implementation guidelines, and the class interface for the Board.
+Alfabeta.h/cpp: Implementation of the α-β pruning algorithm based on the provided Minimax algorithm.
+Minimax.h/cpp: Original implementation of the Minimax algorithm.
+heuristic.h/cpp: Contains the heuristic functions used to evaluate the game state. A non-informative heuristic is provided, and additional heuristics must be implemented for comparison.
+##Implementation Instructions
+
+Compile the Code: Follow the instructions in the explanation.txt file to compile the code. Ensure that you have a C++ compiler installed.
+Run the Game: Execute the main program to start playing Otello using the implemented algorithms and heuristics. You can test the α-β algorithm against the Minimax algorithm or between different heuristics.
+Heuristic Development: Implement at least two different heuristics in the heuristic.h/cpp files. The heuristics should evaluate the board state and provide scores for potential moves.
+Testing: After implementing the heuristics, run tests to see how they perform against each other and document the results.
+##Submission Requirements
+
+A fully commented implementation of the α-β algorithm.
+At least two heuristics with their respective implementations.
+A file named explanation.txt containing compilation instructions and results obtained from testing the heuristics.
+Source code must be sufficiently commented for clarity.
+License
