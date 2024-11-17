@@ -1,6 +1,6 @@
 #include "minimax.h"
 
-// This is a global variable, since it might have to be used by heuristic, too.
+// This is a global variable, since it might have to be used by heuristic, too
 unsigned chosen_depth=2;
 
 int main(int argc,char *argv[])
