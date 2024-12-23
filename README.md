@@ -9,7 +9,6 @@ Otello is played on an 8x8 board with two players, Alice and Bob, who use black 
 
 ## Files Included
 
-pr2_eng.pdf: Detailed description of the project requirements, including game rules, algorithm implementation guidelines, and the class interface for the Board.
 Alfabeta.h/cpp: Implementation of the α-β pruning algorithm based on the provided Minimax algorithm.
 Minimax.h/cpp: Original implementation of the Minimax algorithm.
 heuristic.h/cpp: Contains the heuristic functions used to evaluate the game state. A non-informative heuristic is provided, and additional heuristics must be implemented for comparison.
